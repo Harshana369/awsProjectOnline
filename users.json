@@ -1,0 +1,2386 @@
+[{
+  "_id": {
+    "$oid": "63036974aad3021b944a8333"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Roshan Priyadarshana",
+  "email": "landhengineers@gmail.com",
+  "company": {
+    "$oid": "630337ee81a4f76e71554d09"
+  },
+  "mobileNo": 718516970,
+  "username": "lg",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661167988753"
+    }
+  },
+  "password": "U2FsdGVkX18hMGFO3y/CjChf7ERLvR5xu7UMN49JDUY=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661167988774"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662119391693"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63036a7faad3021b944a8343"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Priyadarshani Palugaswawa",
+  "email": "Priyadarshanip@suvitechnetworks.com",
+  "company": {
+    "$oid": "6303380481a4f76e71554d0a"
+  },
+  "mobileNo": 710318601,
+  "username": "SuvitechNetworks",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661168255321"
+    }
+  },
+  "password": "U2FsdGVkX18hMGFO3y/CjChf7ERLvR5xu7UMN49JDUY=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661168255328"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663219007152"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63036ad1aad3021b944a8353"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Dulani Iroshini",
+  "email": "dulani@dar.lk",
+  "company": {
+    "$oid": "6303381481a4f76e71554d0b"
+  },
+  "mobileNo": 762715740,
+  "username": "dulani_dar",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661168337565"
+    }
+  },
+  "password": "U2FsdGVkX1/q585tFVdaRcF8bJ7HeWnZwpK1Pq7PjO8lt7k9QalPIWsAn9LDRaD8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661168337571"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662129275895"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "adminRights": true,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Dulanjani Wijayarathne",
+  "email": "dulanjanik@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 755555555,
+  "username": "dulanjanik",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Admin",
+  "isProjectCoordinator": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1661185565467"
+    }
+  },
+  "password": "U2FsdGVkX1+vCxF2ixKrlyrkEiU881BJEGrZjlQKm46p5/4YsUOyAF9fpMtA8aIi",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661185565475"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661185565475"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63043b9faad3021b944a85d2"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Shiroan Cader",
+  "email": "shiroan@onnexta.lk",
+  "company": {
+    "$oid": "6303382681a4f76e71554d0c"
+  },
+  "mobileNo": 717333491,
+  "username": "ShiroanOnnexta",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661221791696"
+    }
+  },
+  "password": "U2FsdGVkX1+BLa6tonV71lEOZ+xeyoCgYKtJCJWaOTw=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661221791702"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662004955801"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63043caaaad3021b944a85f0"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Sanjaya Mahawatta",
+  "email": "sanjaya@gartersolution.com",
+  "company": {
+    "$oid": "6303383681a4f76e71554d0d"
+  },
+  "mobileNo": 705599862,
+  "username": "Sanjaya_GarterSolutions",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661222058774"
+    }
+  },
+  "password": "U2FsdGVkX19q8GVpKNEy6kyIoS+wNOYFGgNxQk9WQkaWWnS6fQpgwbffo6MWtkXo",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661222058781"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661222058781"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63043ed6aad3021b944a8600"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Niluka Siriwardhana",
+  "email": "info@intelsolutions.lk",
+  "company": {
+    "$oid": "6303384981a4f76e71554d0e"
+  },
+  "mobileNo": 97,
+  "username": "Niluka_IntelSolutions",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661222614274"
+    }
+  },
+  "password": "U2FsdGVkX1/q585tFVdaRcF8bJ7HeWnZwpK1Pq7PjO8lt7k9QalPIWsAn9LDRaD8=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661222614282"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1699854542720"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63044104aad3021b944a863a"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Niluka Pathirana",
+  "email": "engineering@etelsolutions.lk",
+  "company": {
+    "$oid": "630338a781a4f76e71554d0f"
+  },
+  "mobileNo": 772492453,
+  "username": "Niluka_EtelSolutions",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661223172282"
+    }
+  },
+  "password": "U2FsdGVkX198QLv54FF7MkHPL7ew1NHa+X6FFcAjxmg=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661223172288"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1699853994888"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63044203aad3021b944a864a"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Nevil Ranasinghe",
+  "email": "singhe.ind@gmail.com",
+  "company": {
+    "$oid": "630338b481a4f76e71554d10"
+  },
+  "mobileNo": 718369494,
+  "username": "Nevil_SingheEngineering",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661223427970"
+    }
+  },
+  "password": "U2FsdGVkX1/q9QFD6F0Pinj0kwQDn0O0jHqI9NLfniAODIXxO154dd24D06XwZ+y",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661223427977"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661223427977"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304429daad3021b944a865a"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Buddhi Amarasekara",
+  "email": "buddhi@chesseng.lk",
+  "company": {
+    "$oid": "630338c181a4f76e71554d11"
+  },
+  "mobileNo": 717239078,
+  "username": "Buddhi_ChessEngineering",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661223581210"
+    }
+  },
+  "password": "U2FsdGVkX19H9bsjwBnexT66oEweuAGijRqak77r741mRIf5Oot4vZUhYMi1Btcq",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661223581216"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663581000183"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304436daad3021b944a866a"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Thilak Kumara",
+  "email": "polygonk@sltnet.lk",
+  "company": {
+    "$oid": "630338ce81a4f76e71554d12"
+  },
+  "mobileNo": 712602221,
+  "username": "Thilak_Polygon-K",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661223789871"
+    }
+  },
+  "password": "U2FsdGVkX186NpMD4FQipGvf9or1HZITfBFFQ/pVLfk=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661223789877"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661223789877"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63045e9daad3021b944a86a3"
+  },
+  "adminRights": true,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Nuwan Janaranga",
+  "email": "nuwanj@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_IBS",
+  "mobileNo": 765562918,
+  "username": "nuwanj",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Admin",
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661230749003"
+    }
+  },
+  "password": "U2FsdGVkX1/dX/fpCZ31gF4R/l256HqGnowhyDcYspQR6//UiymMnH+sa7WOkHeg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661230749008"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661230749008"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63045f04aad3021b944a86b3"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Test Subcon",
+  "email": "test",
+  "company": {
+    "$oid": "630337ee81a4f76e71554d09"
+  },
+  "mobileNo": 71122645,
+  "username": "test_subcon",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1661230852203"
+    }
+  },
+  "password": "U2FsdGVkX186NpMD4FQipGvf9or1HZITfBFFQ/pVLfk=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661230852208"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668411040967"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63046fc1aad3021b944a86ee"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047b92aad3021b944a879c"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Yomal Kodagoda",
+  "email": "yomalko@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 777777777,
+  "username": "yomalko",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661235137520"
+    }
+  },
+  "password": "U2FsdGVkX18fiok7G1ERWEHChUC9ParuHF8xVAkxWjx4Bf4BInlz5KYEmYW8fiyH",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661235137529"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1699856829795"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63047181aad3021b944a8707"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "A.T.M.Imran",
+  "email": "mohamadImr@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 712703006,
+  "username": "mohamadImr",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661235585686"
+    }
+  },
+  "password": "U2FsdGVkX18T0Qu8/1yq9xVvgSEzalROCIxj+D7TiDch5s6w1n60/VfhHVrk98r8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661235585694"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662007499633"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304724baad3021b944a8717"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Suranga Gunawardhana",
+  "email": "surangag@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 7063,
+  "username": "surangag",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661235787437"
+    }
+  },
+  "password": "U2FsdGVkX186NpMD4FQipGvf9or1HZITfBFFQ/pVLfk=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661235787444"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663579438186"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304758eaad3021b944a8736"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047b92aad3021b944a879c"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Dumindu Chamikara",
+  "email": "duminduc@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 89,
+  "username": "duminduc",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661236622794"
+    }
+  },
+  "password": "U2FsdGVkX199UCCZXHnkjyXITolW0xFBG4KAs+qDFEN7cfPbGsmSEk+XvB7hUIk8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661236622802"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662011987089"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630476d1aad3021b944a8756"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047b92aad3021b944a879c"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Himantha Rajapakshe",
+  "email": "himanthara@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 711392030,
+  "username": "himanthara",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661236945538"
+    }
+  },
+  "password": "U2FsdGVkX18x4GpNIumb3AIsnJLKNKTNhbOk3jMQyzmHFfXnMxCaLumyyfbuNQhV",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661236945544"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662011954397"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304786aaad3021b944a877c"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047b92aad3021b944a879c"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Shehan Perera",
+  "email": "shehanpe@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 716353103,
+  "username": "shehanpe",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661237354103"
+    }
+  },
+  "password": "U2FsdGVkX188bTUV3Xlh2GcdTcNu+xHAYJmoxWtX/Yw=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661237354108"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662012018706"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63047a62aad3021b944a878c"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Isuru Gunasekara",
+  "email": "isurug@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 60,
+  "username": "isurug",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_Div_Head",
+  "projectCoordinator": {
+    "$oid": "630c4ba5618208051087f64f"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661237858715"
+    }
+  },
+  "password": "U2FsdGVkX19OZF6BtmPnWzcjDZ0blYy66BClBSH31ZDawBAzdAfISh4Jv24JkVak",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661237858721"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662719709722"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63047b92aad3021b944a879c"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Chamika Nugegoda",
+  "email": "chamikan@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 716768536,
+  "username": "chamikan",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Admin",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661238162798"
+    }
+  },
+  "password": "U2FsdGVkX192Ls1AdS2uoM/W8bx9Af5sQuN/DbehnOg=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661238162804"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663828272407"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63047c1aaad3021b944a87ac"
+  },
+  "adminRights": true,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Chamara Jayasanka",
+  "email": "chamaraj@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 1,
+  "username": "chamaraj",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_PM",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661238298126"
+    }
+  },
+  "password": "U2FsdGVkX18DEhfMSg773DTC86GsQfK5WSc4o+xtuibbhOkTUUySSF2kiFoGIoTp",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661238298133"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662212772026"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63047cb0aad3021b944a87bd"
+  },
+  "adminRights": true,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Kanishka Wijerathne",
+  "email": "kanishkaw@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_WiFi",
+  "mobileNo": 710792976,
+  "username": "kanishkaw",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_PM",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661238448448"
+    }
+  },
+  "password": "U2FsdGVkX191YYoYsA6izZzwx+BYEMu/YqKP+B5oo9UlHJkqDOZR/8sdL2e9w38m",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661238448454"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666251549687"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304c550aad3021b944a8a5d"
+  },
+  "adminRights": true,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Prageeth Udugampola",
+  "email": "prageethu@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 715353338,
+  "username": "prageethu",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_PM",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661257040825"
+    }
+  },
+  "password": "U2FsdGVkX1+jTydrm6x40pu1TXO4hJbzEozkVpBXPhQ=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661257040833"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666000083421"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6304cb97aad3021b944a8a8a"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Amila Aluthwala",
+  "email": "aluthwala@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 716884796,
+  "username": "aluthwala",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_Div_Head",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661258647133"
+    }
+  },
+  "password": "U2FsdGVkX1/ceSJtHVdiH9QxruxqIkJxZ/5vSUumfqv6FVlZ/uw/A8MAvDOg36W/",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661258647139"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661258647139"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63058d31aad3021b944a8b20"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Sampath Kaluarachchi",
+  "email": "chamaraka@ibteng.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 7,
+  "username": "chamaraka",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661308209711"
+    }
+  },
+  "password": "U2FsdGVkX1/q585tFVdaRcF8bJ7HeWnZwpK1Pq7PjO8lt7k9QalPIWsAn9LDRaD8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661308209717"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662016317501"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63058e35aad3021b944a8b44"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Prashath Jayawardhana",
+  "email": "prashathj@ibteng.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 714200119,
+  "username": "prashathj",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661308469721"
+    }
+  },
+  "password": "U2FsdGVkX19GnWzbcfM8KYMRH/GUkTjYJrYnzXAyias=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661308469725"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662439804907"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63059582aad3021b944a8b81"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "6304c550aad3021b944a8a5d"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Randika Prabath",
+  "email": "randikap@ibteng.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 717005866,
+  "username": "randikap",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661310338186"
+    }
+  },
+  "password": "U2FsdGVkX18vX1vdVgpPzIMMpg0esVElwjQUkfZYfpq7dIgq4mQTBatGD/dDYNig",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661310338192"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662018032182"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6308352daad3021b944ab48f"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Nuwan Weerapanage",
+  "email": "Nuwandu@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 7568,
+  "username": "Nuwandu",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661482285617"
+    }
+  },
+  "password": "U2FsdGVkX1/q585tFVdaRcF8bJ7HeWnZwpK1Pq7PjO8lt7k9QalPIWsAn9LDRaD8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661482285627"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663296949078"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6308358baad3021b944ab4a7"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Sahan Dissanayake",
+  "email": "sahand@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 704369929,
+  "username": "sahand",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661482379784"
+    }
+  },
+  "password": "U2FsdGVkX18gLNX46+/rZZRHjLBirxWEdGMm7JOJFTYDv8zfZDhQ9XYztJcUF0Th",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661482379789"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661482379789"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630879a8aad3021b944ac831"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Lasitha Rideewita",
+  "email": "lasithar@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 714305448,
+  "username": "lasithar",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661499816409"
+    }
+  },
+  "password": "U2FsdGVkX1/OCk61mLdMuhRS/OLCML45XIPv5y2W3dXZ1/UtZj8b15LSyypE12v4",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661499816416"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661499816416"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63087b43aad3021b944ac849"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Anuvinda Dissanayake",
+  "email": "anuvindad@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 718684787,
+  "username": "anuvindad",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661500227616"
+    }
+  },
+  "password": "U2FsdGVkX19oVQ/s5Hqy6tYr8WFPjkRxhXIWKZflyth9goZjBaGc80bK9hwn8V6F",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661500227624"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661500227624"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63087c41aad3021b944ac873"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Yasitha Harshanath",
+  "email": "yasithah@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 711099837,
+  "username": "yasithah",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661500481481"
+    }
+  },
+  "password": "U2FsdGVkX1+VGqx4uJlzoo6XvoTz5+N7yTlN6y5IKp9qy+I9GLbYWxjRvtr8Jyq4",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661500481488"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661500481488"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63087f20aad3021b944ac89d"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Keminda Perera",
+  "email": "kemindap@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 703846575,
+  "username": "kemindap",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661501216530"
+    }
+  },
+  "password": "U2FsdGVkX18/Vg24wCYGMqJy9LDa3gt8cEguBbHYASl3Sxb9LKphlPXuMZXOyjyu",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661501216538"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661501216538"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63088748aad3021b944ac8d3"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Sankhani Perera",
+  "email": "sankhanipe@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 719302543,
+  "username": "sankhanipe",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661503304916"
+    }
+  },
+  "password": "U2FsdGVkX19CoqIfYxvJ9kOzuxCQ719FhxZhHkkZDe3H4jpy4srIZTQoNpgOAWvA",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661503304922"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661503304922"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630c4572618208051087f60d"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047b92aad3021b944a879c"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Purnima Hondamunige",
+  "email": "purnimah@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_Radio",
+  "mobileNo": 719891410,
+  "username": "purnimah",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Admin",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1661748594059"
+    }
+  },
+  "password": "U2FsdGVkX1/LIFOU9RcatYpGzzFhuj/nPK1e6P3h6DH/VDT6ZePQikhOu455+iw0",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661748594073"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666351148125"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630c4ba5618208051087f64f"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047b92aad3021b944a879c"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    },
+    {
+      "$oid": "6304cb97aad3021b944a8a8a"
+    }
+  ],
+  "name": "Durga Palapathwala",
+  "email": "durgapa@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 712657413,
+  "username": "durgapa",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_Coor",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1661750181421"
+    }
+  },
+  "password": "U2FsdGVkX1/bCQBleyKAx03e7cxU8HTixRIRSXWzz0vzojnqXrNYbCTekDjKq6fs",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661750181430"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666351642113"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6315af3f467bee1f54cebac0"
+  },
+  "adminRights": true,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Bhanusha Kalansuriya",
+  "email": "Bhanushak@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_IBS",
+  "mobileNo": 74718,
+  "username": "Bhanushak",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_PM",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1662365503154"
+    }
+  },
+  "password": "U2FsdGVkX1/q585tFVdaRcF8bJ7HeWnZwpK1Pq7PjO8lt7k9QalPIWsAn9LDRaD8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662365503170"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666175852246"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6315b2eb467bee1f54cebc35"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "6315af3f467bee1f54cebac0"
+    },
+    {
+      "$oid": "63045e9daad3021b944a86a3"
+    }
+  ],
+  "name": "Kasun Kandamulla",
+  "email": "kasunkan@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_IBS",
+  "mobileNo": 79868,
+  "username": "kasunkan",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1662366443854"
+    }
+  },
+  "password": "U2FsdGVkX18MVZALbJ/IM4XnXhKJrd1aaIR9yMpbpZ3exIBNuQtKTCJAlCIU4a2F",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662366443875"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662366443875"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6315b441467bee1f54cebc93"
+  },
+  "adminRights": false,
+  "activeStatus": false,
+  "approvalPath": [],
+  "name": "Gayani Nanayakkara",
+  "email": "Gayanin@Mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_IBS",
+  "mobileNo": 712267967,
+  "username": "Gayanin",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Project_Coor",
+  "isProjectCoordinator": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1662366785620"
+    }
+  },
+  "password": "U2FsdGVkX1/2nE/UWQzDzPAYyebuPW9YcpcJR5DLneY=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662366785626"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1667534388627"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6315b7d1467bee1f54cebd60"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "6315af3f467bee1f54cebac0"
+    },
+    {
+      "$oid": "63045e9daad3021b944a86a3"
+    }
+  ],
+  "name": "Hasitha Amarawansha",
+  "email": "hasithaam@ibteng.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_IBS",
+  "mobileNo": 719153010,
+  "username": "hasithaam",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "6303ae1daad3021b944a84d6"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1662367697417"
+    }
+  },
+  "password": "U2FsdGVkX18jIRQSav/r9NaIOiR9xx3i7AnZmEgiJwWXyailhLGcyLK2uBtoFk2b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662367697434"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662367697434"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632331f588ade622449e6d1f"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Rajith Pathiranage",
+  "email": "randunu.pathiranage@sierra.lk",
+  "company": {
+    "$oid": "63232ffe88ade622449e6cad"
+  },
+  "mobileNo": 714530999,
+  "username": "randunu.pathiranage",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663250933532"
+    }
+  },
+  "password": "U2FsdGVkX18kIAhQJGFXMgy43/aU9ld0aJp0zPAuyFs=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663250933542"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663297264703"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323339e88ade622449e6d39"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Rajeev Jayawardane",
+  "email": "rajeev@commech.lk",
+  "company": {
+    "$oid": "6323301288ade622449e6cb0"
+  },
+  "mobileNo": 713286153,
+  "username": "rajeev",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663251358628"
+    }
+  },
+  "password": "U2FsdGVkX1+gHfpnObn1IiW5sbQwFua4lOFv8hY6ZFg=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663251358643"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663299652405"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632334d388ade622449e6d53"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Upekha Ekanayake",
+  "email": "upekha@techventureslk.com",
+  "company": {
+    "$oid": "6323301b88ade622449e6cb3"
+  },
+  "mobileNo": 713968190,
+  "username": "upekha",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663251667415"
+    }
+  },
+  "password": "U2FsdGVkX19eP4p9PjkkFiyHss1f9EnCdiCvRLId/Vk=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663251667421"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663317214061"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632335f588ade622449e6d6d"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Jerun Hapuarachchi",
+  "email": "proprietor@jtechzone.com",
+  "company": {
+    "$oid": "6323302388ade622449e6cb6"
+  },
+  "mobileNo": 715899088,
+  "username": "proprietor",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663251957639"
+    }
+  },
+  "password": "U2FsdGVkX186NpMD4FQipGvf9or1HZITfBFFQ/pVLfk=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663251957645"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663303821224"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323371488ade622449e6d87"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Ameesha Radishan",
+  "email": "ameesha@assuresolution.com",
+  "company": {
+    "$oid": "6323302b88ade622449e6cb9"
+  },
+  "mobileNo": 763981870,
+  "username": "ameesha",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663252244767"
+    }
+  },
+  "password": "U2FsdGVkX1/W4TT6p0ynHr26MGs4Od2u25ZqQGQjcK8+cuxbGURl+H+RaqxWtx5E",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663252244773"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663252244773"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323379788ade622449e6da1"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Menaka Priyadarshani",
+  "email": "menaka@atsl.lk",
+  "company": {
+    "$oid": "6323303388ade622449e6cbc"
+  },
+  "mobileNo": 773678012,
+  "username": "menaka",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663252375945"
+    }
+  },
+  "password": "U2FsdGVkX19jDz/ZE5ubMD7igXomMkwMo2MefAVNGwY=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663252375951"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663562824358"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323386788ade622449e6dd3"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Surangi Gunawardena",
+  "email": "surangi@comengg.com",
+  "company": {
+    "$oid": "6323304c88ade622449e6cbf"
+  },
+  "mobileNo": 777323205,
+  "username": "surangi",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663252583030"
+    }
+  },
+  "password": "U2FsdGVkX19JYwHneAA1CLWp9bnQq3gxrwduuG1V0YYLdrVteXNMbXqvswMKw2L0",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663252583038"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663252583038"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632339e588ade622449e6e1d"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Dilan Hansana Sugathsiri",
+  "email": "DilanSug@brownsinvestments.com",
+  "company": {
+    "$oid": "6323305a88ade622449e6cc2"
+  },
+  "mobileNo": 704703274,
+  "username": "DilanSug",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663252965641"
+    }
+  },
+  "password": "U2FsdGVkX1/nHLW8ZnhbSiER/CIiifKsbe5wG4Xl77tQDF2rJ4N1IY1aPiaFP2o7",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663252965649"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663252965649"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63233df588ade622449e6e5e"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Aravinda Gunawardana",
+  "email": "aravinda@ibteng.lk",
+  "company": {
+    "$oid": "6323306188ade622449e6cc5"
+  },
+  "mobileNo": 715338053,
+  "username": "aravinda",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663254005801"
+    }
+  },
+  "password": "U2FsdGVkX19yHTL/YJo76sweHo/Qv/jlmkQJ80djO1UxMCZnGWfFao4/qyBjaNLG",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663254005807"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663254005807"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63233ed788ade622449e6e90"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "PC Perera",
+  "email": "rfdesign@sltnet.lk",
+  "company": {
+    "$oid": "6323306b88ade622449e6cc8"
+  },
+  "mobileNo": 713787090,
+  "username": "rfdesign",
+  "visbilityBasedOn": "Subcon",
+  "date": {
+    "$date": {
+      "$numberLong": "1663254231192"
+    }
+  },
+  "password": "U2FsdGVkX19XRPhrV1SHEEBjT1vTpbh/W6S0CvSUOCY=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663254231200"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663311921715"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324ae4088ade622449ea1df"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "63047cb0aad3021b944a87bd"
+    },
+    {
+      "$oid": "63045e9daad3021b944a86a3"
+    }
+  ],
+  "name": "Asanga Jayasooriya",
+  "email": "AsangaJ@brownsinvestments.com",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "mobileNo": 704703575,
+  "username": "AsangaJ",
+  "visbilityBasedOn": "Project_TO",
+  "date": {
+    "$date": {
+      "$numberLong": "1663348288139"
+    }
+  },
+  "password": "U2FsdGVkX1/vCXLEdho6zxhMn+WtFaZC1/2GVthuSJY=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663348288147"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666346147282"
+    }
+  },
+  "__v": 0,
+  "userCanAssignForTask": true,
+  "userDiv": "Project_IBS"
+},{
+  "_id": {
+    "$oid": "632986dd88ade622449edba9"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Pasindu Senevirathna",
+  "email": "hpto@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Planning_IBS",
+  "mobileNo": 702785409,
+  "username": "hpto",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Planning",
+  "projectCoordinator": {
+    "$oid": "6315b441467bee1f54cebc93"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1663665885419"
+    }
+  },
+  "password": "U2FsdGVkX1/ZxkHRLbdDjZNh523jHsww4eJSIIHaHXk=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663665885428"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663665885428"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63490fbb88ade62244a0d576"
+  },
+  "adminRights": false,
+  "activeStatus": false,
+  "approvalPath": [
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Suranga Bandara",
+  "email": "surangaba@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_TX",
+  "mobileNo": 714524897,
+  "username": "surangaba",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Project_TO",
+  "projectCoordinator": {
+    "$oid": "630c4ba5618208051087f64f"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1665732539940"
+    }
+  },
+  "password": "U2FsdGVkX1/ITJ6Og2QgHzYsqOjwxFS02sEyfVJ9rMo=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665732539950"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665734816208"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6371eed3cde0551f5413faec"
+  },
+  "adminRights": true,
+  "activeStatus": false,
+  "approvalPath": [
+    {
+      "$oid": "6371eed3cde0551f5413faec"
+    },
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Manod Wijesiriwardana",
+  "email": "manodw@mobitel.lk",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_IBS",
+  "mobileNo": 718526970,
+  "username": "manodw",
+  "userCanAssignForTask": true,
+  "visbilityBasedOn": "Admin",
+  "projectCoordinator": {
+    "$oid": "6315b441467bee1f54cebc93"
+  },
+  "isProjectCoordinator": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1668411091821"
+    }
+  },
+  "password": "U2FsdGVkX1/q585tFVdaRcF8bJ7HeWnZwpK1Pq7PjO8lt7k9QalPIWsAn9LDRaD8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668411091842"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1699855021930"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637dcdc5cde0551f54149c08"
+  },
+  "adminRights": false,
+  "activeStatus": false,
+  "approvalPath": [],
+  "name": "BTS_Project_API",
+  "email": "BTS_Project_API",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "userDiv": "Project_Radio",
+  "mobileNo": 111111111,
+  "username": "BTS_Project_API",
+  "userCanAssignForTask": false,
+  "visbilityBasedOn": "Admin",
+  "projectCoordinator": {
+    "$oid": "630c4ba5618208051087f64f"
+  },
+  "isProjectCoordinator": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1669189061688"
+    }
+  },
+  "password": "U2FsdGVkX1/LigtYYQwXjghiSZ4zNY9iKTgrcxZTXmQ=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669189061699"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669189061699"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64b4e9db2fdec637f4fb1415"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [
+    {
+      "$oid": "6371eed3cde0551f5413faec"
+    },
+    {
+      "$oid": "63047c1aaad3021b944a87ac"
+    },
+    {
+      "$oid": "63047a62aad3021b944a878c"
+    }
+  ],
+  "name": "Nimal Perera",
+  "email": "nimal@gmail.com",
+  "company": {
+    "$oid": "626253157f2a134e68501255"
+  },
+  "mobileNo": 80,
+  "username": "Nimal",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1689577947944"
+    }
+  },
+  "password": "U2FsdGVkX19t64CU5jhji1L/SjF+zpqpkfU41Pmubz0=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1689577947976"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1700472298850"
+    }
+  },
+  "__v": 0,
+  "projectCoordinator": {
+    "$oid": "6371eed3cde0551f5413faec"
+  },
+  "userDiv": "Planning_IBS",
+  "visbilityBasedOn": "Project_TO"
+},{
+  "_id": {
+    "$oid": "64b75dd26d0b30679023b0f0"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Kanishka Dinilak",
+  "email": "kanishka@gmail.com",
+  "company": {
+    "$oid": "64b4ec3a2fdec637f4fb146b"
+  },
+  "mobileNo": 754718,
+  "username": "Kanishka",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1689738706274"
+    }
+  },
+  "password": "U2FsdGVkX1/WrVVTXMojPV0Pm7uMQDrebd+dQ3jm3H0OCZQImUgpzgg+zfnMc8wr",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1689738706276"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1689738706276"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64b789fc6d0b30679023b354"
+  },
+  "adminRights": false,
+  "activeStatus": false,
+  "approvalPath": [],
+  "name": "Rushan Manuja",
+  "email": "rushanweerasinghe123@gmail.com",
+  "company": {
+    "$oid": "64b4f8f15e6412650ccded97"
+  },
+  "mobileNo": 756975899,
+  "username": "Manuja",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1689750012008"
+    }
+  },
+  "password": "U2FsdGVkX18VI93IZ4bCBBnhhdPOv+hDROq/9h3u3gg=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1689750012023"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690517289952"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64cc75af27163f31f80d89c1"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "ZTEUser",
+  "email": "zte@gmail.com",
+  "company": {
+    "$oid": "64cc72e427163f31f80d893c"
+  },
+  "mobileNo": 756918,
+  "username": "ZTEUser",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1691121071591"
+    }
+  },
+  "password": "U2FsdGVkX1/WyYqhFam5s3j9uvyYmOA/zqGYT1nDIa4=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1691121071615"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1691121071615"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64d9f7f1922e501e2cb2ce21"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Saman Perera",
+  "email": "saman@gmail.com",
+  "company": {
+    "$oid": "64cc72e427163f31f80d893c"
+  },
+  "mobileNo": 770411809,
+  "username": "Saman",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": false,
+  "date": {
+    "$date": {
+      "$numberLong": "1692006385104"
+    }
+  },
+  "password": "U2FsdGVkX19qCw6iJZGwCKFRfsRVR58cl8dMY1uiVdo=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1692006385115"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1692006385115"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64e581a664c6244e70f6776f"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "HuaweiUser",
+  "email": "huweiuser@gmail.com",
+  "company": {
+    "$oid": "64e5802f64c6244e70f676cf"
+  },
+  "mobileNo": 767866,
+  "username": "HuaweiUsername",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1692762534633"
+    }
+  },
+  "password": "U2FsdGVkX18fbY/Zio09byTukXRRxjiVdfa2j4E4bNzfKOqP46NiHFlMM2/ykzJr",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1692762534638"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1692762534638"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64e82faf3f695c3c78234fd6"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "Imp",
+  "email": "imp@gmail.com",
+  "company": {
+    "$oid": "64cc72e427163f31f80d893c"
+  },
+  "mobileNo": 718,
+  "username": "impuser",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1692938159288"
+    }
+  },
+  "password": "U2FsdGVkX1/p8AP5j3032CqP7z4Wk7oNbvyrAO1ifYQ=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1692938159302"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1692938159302"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64f6e638c42f101ce07e3adf"
+  },
+  "adminRights": false,
+  "activeStatus": true,
+  "approvalPath": [],
+  "name": "HTCName",
+  "email": "HTC@gmail.com",
+  "company": {
+    "$oid": "64f6e591c42f101ce07e3ad0"
+  },
+  "mobileNo": 756974718,
+  "username": "HTCUsername",
+  "visbilityBasedOn": "Vender",
+  "userCanAssignForTask": true,
+  "date": {
+    "$date": {
+      "$numberLong": "1693902392916"
+    }
+  },
+  "password": "U2FsdGVkX1+4gejY5yqr1667c4EemDqh3go8tievT6o=",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1693902392924"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1693902392924"
+    }
+  },
+  "__v": 0
+}]
