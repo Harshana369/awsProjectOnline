@@ -616,8 +616,8 @@ router.put("/update/:taskId", verify, async (req, res) => {
 // Your Express router definition
 router.put("/update/:taskId", verify, async (req, res) => {
   const changeHandOverUserId = req.body.handOverDataChange.changeHandOverUser;
-  console.log(changeHandOverUserId);
-  console.log(req.params.taskId);
+  // console.log(changeHandOverUserId);
+  // console.log(req.params.taskId);
   try {
     // Get the handover change document
     const updatedHandover = await handoverChanges.find({
@@ -680,351 +680,156 @@ router.put("/boqProjectRequirement/:id", verify, async (req, res) => {
 });
 
 //Get tasks based on Company,Div,User of a task
-
-// router.get("/gettasks", verify, async (req, res) => {
-//   console.time("gettasks");
-
-//   let chartData;
-//   switch (req.user.visbilityBasedOn) {
-//     case "Admin":
-//       await Task.find({})
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read mobitel company tasks" + err);
-//         });
-//       break;
-//     case "Planning":
-//       await Task.find({})
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           //console.log(tasks)
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read mobitel company tasks" + err);
-//         });
-//       break;
-//     case "Subcon":
-//       await Task.find({ assignedSubcon: req.user.company })
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read subcon company tasks" + err);
-//         });
-//       break;
-//     case "Project_Div_Head":
-//       await Task.find({ taskAssignedDiv: req.user.userDiv })
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read specific div tasks" + err);
-//         });
-//       break;
-//     case "Project_TO":
-//       await Task.find({ assignedMobitelOfficer: req.user.id })
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read specific user tasks" + err);
-//         });
-//       break;
-//     case "Project_PM":
-//       await Task.find({ assignedProjectManager: req.user.id })
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read specific user tasks" + err);
-//         });
-//       break;
-//     case "Project_Coor":
-//       await Task.find({ taskAssignedDiv: req.user.userDiv })
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//           console.log("Project_Coor");
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read specific div tasks" + err);
-//         });
-//       break;
-
-//     case "Vender":
-//       await Task.find({ assignedSubcon: req.user.company })
-//         .populate([
-//           { path: "taskHistory.performedBy", select: "name" },
-//           "assignedSubcon",
-//           "assignedMobitelOfficer",
-//           "boqs",
-//           { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-//         ])
-//         .then((tasks) => {
-//           chartData = getChartData(tasks);
-//           res.send({ tasks: tasks, chartData: chartData });
-//           console.log("Vender");
-//         })
-//         .catch((err) => {
-//           console.log("error occured during read specific div tasks" + err);
-//         });
-//       break;
-//   }
-//   console.timeEnd("gettasks");
-// });
-
-// function getChartData(tasks) {
-//   var chartData = [];
-//   var date = new Date();
-//   date.setDate(date.getDate() - 30);
-
-//   for (var i = 0; i <= 30; i++) {
-//     chartData[i] = {
-//       date: date.toISOString().split("T")[0],
-//       subconAllocated: tasks
-//         .filter(
-//           (obj) =>
-//             typeof obj.taskHistory.find(
-//               (x) => x.taskStatus === "Subcon allocated"
-//             ) !== "undefined"
-//         )
-//         .filter(
-//           (obj) =>
-//             obj.taskHistory
-//               .find((x) => x.taskStatus === "Subcon allocated")
-//               .performedDate.toISOString()
-//               .split("T")[0] == date.toISOString().split("T")[0]
-//         ).length,
-//       taskAccept: tasks
-//         .filter(
-//           (obj) =>
-//             typeof obj.taskHistory.find(
-//               (x) => x.taskStatus === "Task accepted"
-//             ) !== "undefined"
-//         )
-//         .filter(
-//           (obj) =>
-//             obj.taskHistory
-//               .find((x) => x.taskStatus === "Task accepted")
-//               .performedDate.toISOString()
-//               .split("T")[0] == date.toISOString().split("T")[0]
-//         ).length,
-//       taskComplete: tasks
-//         .filter(
-//           (obj) =>
-//             typeof obj.taskHistory.find(
-//               (x) => x.taskStatus === "Task completed"
-//             ) !== "undefined"
-//         )
-//         .filter(
-//           (obj) =>
-//             obj.taskHistory
-//               .find((x) => x.taskStatus === "Task completed")
-//               .performedDate.toISOString()
-//               .split("T")[0] == date.toISOString().split("T")[0]
-//         ).length,
-//       boqSubmitted: tasks
-//         .filter(
-//           (obj) =>
-//             typeof obj.taskHistory.find(
-//               (x) => x.taskStatus === "BOQ submitted"
-//             ) !== "undefined"
-//         )
-//         .filter(
-//           (obj) =>
-//             obj.taskHistory
-//               .find((x) => x.taskStatus === "BOQ submitted")
-//               .performedDate.toISOString()
-//               .split("T")[0] == date.toISOString().split("T")[0]
-//         ).length,
-//       boqApproved: tasks
-//         .filter(
-//           (obj) =>
-//             typeof obj.taskHistory.find(
-//               (x) => x.taskStatus === "BOQ approved"
-//             ) !== "undefined"
-//         )
-//         .filter(
-//           (obj) =>
-//             obj.taskHistory
-//               .find((x) => x.taskStatus === "BOQ approved")
-//               .performedDate.toISOString()
-//               .split("T")[0] == date.toISOString().split("T")[0]
-//         ).length,
-//       prRaised: tasks
-//         .filter(
-//           (obj) =>
-//             typeof obj.taskHistory.find((x) => x.taskStatus === "PR Raised") !==
-//             "undefined"
-//         )
-//         .filter(
-//           (obj) =>
-//             obj.taskHistory
-//               .find((x) => x.taskStatus === "PR Raised")
-//               .performedDate.toISOString()
-//               .split("T")[0] == date.toISOString().split("T")[0]
-//         ).length,
-//     };
-
-//     date.setDate(date.getDate() + 1);
-//   }
-//   return chartData;
-// }
-
 router.get("/gettasks", verify, async (req, res) => {
-  console.time("gettasks");
-
-  try {
-    const tasks = await getTasksByUserRole(req.user);
-    const chartData = getChartData(tasks);
-
-    res.send({ tasks, chartData });
-  } catch (err) {
-    console.error("Error occurred during task retrieval:", err);
-    res.status(500).send({ error: "Internal Server Error" });
-  }
-
-  console.timeEnd("gettasks");
-});
-
-async function getTasksByUserRole(user) {
-  let query = {};
-
-  switch (user.visibilityBasedOn) {
+  // console.log(req.user.visbilityBasedOn);
+  // console.log(req.user.userDiv);
+  let chartData;
+  switch (req.user.visbilityBasedOn) {
     case "Admin":
+      await Task.find({})
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read mobitel company tasks" + err);
+        });
       break;
     case "Planning":
+      await Task.find({})
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          //console.log(tasks)
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read mobitel company tasks" + err);
+        });
       break;
     case "Subcon":
-      query.assignedSubcon = user.company;
+      await Task.find({ assignedSubcon: req.user.company })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read subcon company tasks" + err);
+        });
       break;
     case "Project_Div_Head":
-      query.taskAssignedDiv = user.userDiv;
+      await Task.find({ taskAssignedDiv: req.user.userDiv })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read specific div tasks" + err);
+        });
       break;
     case "Project_TO":
-      query.assignedMobitelOfficer = user.id;
+      await Task.find({ assignedMobitelOfficer: req.user.id })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read specific user tasks" + err);
+        });
       break;
     case "Project_PM":
-      query.assignedProjectManager = user.id;
+      await Task.find({ assignedProjectManager: req.user.id })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read specific user tasks" + err);
+        });
       break;
     case "Project_Coor":
-      query.taskAssignedDiv = user.userDiv;
+      await Task.find({ taskAssignedDiv: req.user.userDiv })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+          console.log("Project_Coor");
+        })
+        .catch((err) => {
+          console.log("error occured during read specific div tasks" + err);
+        });
       break;
+
     case "Vender":
-      query.assignedSubcon = user.company;
+      await Task.find({ assignedSubcon: req.user.company })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          chartData = getChartData(tasks);
+          res.send({ tasks: tasks, chartData: chartData });
+          console.log("Vender");
+        })
+        .catch((err) => {
+          console.log("error occured during read specific div tasks" + err);
+        });
       break;
   }
-
-  const tasks = await Task.find(query).populate([
-    { path: "taskHistory.performedBy", select: "name" },
-    "assignedSubcon",
-    "assignedMobitelOfficer",
-    "boqs",
-    { path: "approvalPath.assignedOfficer", select: "mobileNo" },
-  ]);
-
-  return tasks;
-}
-
-function getChartData(tasks) {
-  const chartData = [];
-  let date = new Date();
-  date.setDate(date.getDate() - 30);
-
-  for (let i = 0; i <= 30; i++) {
-    chartData[i] = {
-      date: date.toISOString().split("T")[0],
-      subconAllocated: countTasksByStatus(tasks, "Subcon allocated", date),
-      taskAccept: countTasksByStatus(tasks, "Task accepted", date),
-      taskComplete: countTasksByStatus(tasks, "Task completed", date),
-      boqSubmitted: countTasksByStatus(tasks, "BOQ submitted", date),
-      boqApproved: countTasksByStatus(tasks, "BOQ approved", date),
-      prRaised: countTasksByStatus(tasks, "PR Raised", date),
-    };
-
-    date.setDate(date.getDate() + 1);
-  }
-
-  return chartData;
-}
-
-function countTasksByStatus(tasks, status, date) {
-  return tasks
-    .filter(
-      (obj) =>
-        typeof obj.taskHistory.find((x) => x.taskStatus === status) !==
-        "undefined"
-    )
-    .filter(
-      (obj) =>
-        obj.taskHistory
-          .find((x) => x.taskStatus === status)
-          .performedDate.toISOString()
-          .split("T")[0] == date.toISOString().split("T")[0]
-    ).length;
-}
+});
 
 //Get tasks based on Company,Div,User of a task
 router.get("/gettasks/:id", verify, async (req, res) => {
-  console.time("gettasks:id");
-
   // console.log(req.params.id);
   let filteredTasks;
   switch (req.user.visbilityBasedOn) {
@@ -1177,8 +982,6 @@ router.get("/gettasks/:id", verify, async (req, res) => {
         });
       break;
   }
-
-  console.timeEnd("gettasks:id");
 });
 
 //Get filtered tasks based on the user visibility
@@ -1540,6 +1343,103 @@ router.get("/webapi_project", async (req, res) => {
 
 /////////////////
 
+function getChartData(tasks) {
+  var chartData = [];
+  var date = new Date();
+  date.setDate(date.getDate() - 30);
+
+  for (var i = 0; i <= 30; i++) {
+    chartData[i] = {
+      date: date.toISOString().split("T")[0],
+      subconAllocated: tasks
+        .filter(
+          (obj) =>
+            typeof obj.taskHistory.find(
+              (x) => x.taskStatus === "Subcon allocated"
+            ) !== "undefined"
+        )
+        .filter(
+          (obj) =>
+            obj.taskHistory
+              .find((x) => x.taskStatus === "Subcon allocated")
+              .performedDate.toISOString()
+              .split("T")[0] == date.toISOString().split("T")[0]
+        ).length,
+      taskAccept: tasks
+        .filter(
+          (obj) =>
+            typeof obj.taskHistory.find(
+              (x) => x.taskStatus === "Task accepted"
+            ) !== "undefined"
+        )
+        .filter(
+          (obj) =>
+            obj.taskHistory
+              .find((x) => x.taskStatus === "Task accepted")
+              .performedDate.toISOString()
+              .split("T")[0] == date.toISOString().split("T")[0]
+        ).length,
+      taskComplete: tasks
+        .filter(
+          (obj) =>
+            typeof obj.taskHistory.find(
+              (x) => x.taskStatus === "Task completed"
+            ) !== "undefined"
+        )
+        .filter(
+          (obj) =>
+            obj.taskHistory
+              .find((x) => x.taskStatus === "Task completed")
+              .performedDate.toISOString()
+              .split("T")[0] == date.toISOString().split("T")[0]
+        ).length,
+      boqSubmitted: tasks
+        .filter(
+          (obj) =>
+            typeof obj.taskHistory.find(
+              (x) => x.taskStatus === "BOQ submitted"
+            ) !== "undefined"
+        )
+        .filter(
+          (obj) =>
+            obj.taskHistory
+              .find((x) => x.taskStatus === "BOQ submitted")
+              .performedDate.toISOString()
+              .split("T")[0] == date.toISOString().split("T")[0]
+        ).length,
+      boqApproved: tasks
+        .filter(
+          (obj) =>
+            typeof obj.taskHistory.find(
+              (x) => x.taskStatus === "BOQ approved"
+            ) !== "undefined"
+        )
+        .filter(
+          (obj) =>
+            obj.taskHistory
+              .find((x) => x.taskStatus === "BOQ approved")
+              .performedDate.toISOString()
+              .split("T")[0] == date.toISOString().split("T")[0]
+        ).length,
+      prRaised: tasks
+        .filter(
+          (obj) =>
+            typeof obj.taskHistory.find((x) => x.taskStatus === "PR Raised") !==
+            "undefined"
+        )
+        .filter(
+          (obj) =>
+            obj.taskHistory
+              .find((x) => x.taskStatus === "PR Raised")
+              .performedDate.toISOString()
+              .split("T")[0] == date.toISOString().split("T")[0]
+        ).length,
+    };
+
+    date.setDate(date.getDate() + 1);
+  }
+  return chartData;
+}
 function createModelForName(name) {
   let Schema = mongoose.Schema;
   if (!(name in establishedModels)) {
