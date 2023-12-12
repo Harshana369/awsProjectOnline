@@ -535,7 +535,7 @@ router.post("/update", upload.array("files"), verify, async (req, res) => {
 
 //Get Files
 router.get("/file/:fileName", verify, async (req, res) => {
-  // console.log(req.params.fileName);
+  console.log(req.params.fileName);
   res.download("./public/" + req.params.fileName);
 });
 
@@ -616,8 +616,8 @@ router.put("/update/:taskId", verify, async (req, res) => {
 // Your Express router definition
 router.put("/update/:taskId", verify, async (req, res) => {
   const changeHandOverUserId = req.body.handOverDataChange.changeHandOverUser;
-  // console.log(changeHandOverUserId);
-  // console.log(req.params.taskId);
+  console.log(changeHandOverUserId);
+  console.log(req.params.taskId);
   try {
     // Get the handover change document
     const updatedHandover = await handoverChanges.find({
@@ -676,6 +676,321 @@ router.put("/boqProjectRequirement/:id", verify, async (req, res) => {
       alert: "Error occurred during updating tasks",
       severity: "error",
     });
+  }
+});
+
+router.get("/getalltasksfortable", verify, async (req, res) => {
+  let chartData;
+  switch (req.user.visbilityBasedOn) {
+    case "Admin":
+      try {
+        const tasks = await Task.find({})
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+
+    case "Planning":
+      try {
+        const tasks = await Task.find({})
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+    case "Subcon":
+      try {
+        const tasks = await Task.find({
+          assignedSubcon: req.user.company,
+        })
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+    case "Project_Div_Head":
+      try {
+        const tasks = await Task.find({ taskAssignedDiv: req.user.userDiv })
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+
+    case "Project_TO":
+      try {
+        const tasks = await Task.find({
+          assignedMobitelOfficer: req.user.id,
+        })
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+    case "Project_PM":
+      try {
+        const tasks = await Task.find({ assignedProjectManager: req.user.id })
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+    case "Project_Coor":
+      try {
+        const tasks = await Task.find({ taskAssignedDiv: req.user.userDiv })
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+
+    case "Vender":
+      try {
+        const tasks = await Task.find({ assignedSubcon: req.user.company })
+          .select(
+            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+          )
+          .populate([
+            { path: "taskHistory.performedBy", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "assignedMobitelOfficer", select: "name" },
+          ]);
+
+        chartData = getChartData(tasks);
+        res.send({ tasks: tasks, chartData: chartData });
+      } catch (err) {
+        console.log("Error occurred during read mobitel company tasks: " + err);
+        res.status(500).send({ error: "Internal Server Error" });
+      }
+      break;
+  }
+});
+
+router.get("/getalltasksfortable/:id", verify, async (req, res) => {
+  // console.log(req.params.id);
+  let filteredTasks;
+  switch (req.user.visbilityBasedOn) {
+    case "Admin":
+      try {
+        let tasks = await Task.find({})
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer boqs approvalPath"
+          )
+          .populate([{ path: "assignedMobitelOfficer", select: "name" }]);
+
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
+      break;
+
+    case "Planning":
+      await Task.find({})
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          //console.log(tasks)
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read mobitel company tasks" + err);
+        });
+      break;
+    case "Subcon":
+      await Task.find({ assignedSubcon: req.user.company })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read subcon company tasks" + err);
+        });
+      break;
+    case "Project_Div_Head":
+      await Task.find({ taskAssignedDiv: req.user.userDiv })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read specific div tasks" + err);
+        });
+      break;
+    case "Project_TO":
+      await Task.find({ assignedMobitelOfficer: req.user.id })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read specific user tasks" + err);
+        });
+      break;
+    case "Project_PM":
+      await Task.find({ assignedProjectManager: req.user.id })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read specific user tasks" + err);
+        });
+      break;
+    case "Project_Coor":
+      await Task.find({ taskAssignedDiv: req.user.userDiv })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+          console.log("Project_Coor");
+        })
+        .catch((err) => {
+          console.log("error occured during read specific div tasks" + err);
+        });
+      break;
+    case "Vender":
+      await Task.find({ assignedSubcon: req.user.company })
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read subcon company tasks" + err);
+        });
+      break;
   }
 });
 
