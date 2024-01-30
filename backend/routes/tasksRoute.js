@@ -8,6 +8,8 @@ import multer from "multer";
 import verify from "../verifyToken.js";
 import nodemailer from "nodemailer";
 import handoverChanges from "../models/handoverChanges.js";
+import xlsx from "xlsx";
+import moment from "moment";
 
 const router = express.Router();
 let establishedModels = {};
@@ -423,9 +425,12 @@ router.get("/venderProject", verify, async (req, res) => {
 });
 
 router.put("/updateprojecttemp/:projectID", verify, async (req, res) => {
-  // const project = req.body.project
-  // const subProject = req.body.subProject
+  const project = req.body.project;
+  const subProject = req.body.subProject;
   const assignedProjectManager = req.body.assignedProjectManager;
+
+  // console.log(project);
+  // console.log(subProject);
 
   await ProjectTemplate.findByIdAndUpdate(req.params.projectID, {
     project,
@@ -535,7 +540,7 @@ router.post("/update", upload.array("files"), verify, async (req, res) => {
 
 //Get Files
 router.get("/file/:fileName", verify, async (req, res) => {
-  console.log(req.params.fileName);
+  // console.log(req.params.fileName);
   res.download("./public/" + req.params.fileName);
 });
 
@@ -685,17 +690,21 @@ router.get("/searchtasks", verify, async (req, res) => {
 
     const query = {
       $or: [
-        { "assignedSubcon.companyName": { $regex: search, $options: "i" } },
-        {
-          "assignedMobitelOfficer.username": { $regex: search, $options: "i" },
-        },
         { taskRef: { $regex: search, $options: "i" } },
         { siteID: { $regex: search, $options: "i" } },
         { taskStatus: { $regex: search, $options: "i" } },
       ],
     };
 
-    const tasks = await Task.find(query);
+    const tasks = await Task.find(query)
+      .select(
+        "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+      )
+      .populate([
+        { path: "taskHistory.performedBy", select: "name" },
+        { path: "assignedSubcon", select: "companyName" },
+        { path: "assignedMobitelOfficer", select: "name" },
+      ]);
 
     res.json({ tasks });
   } catch (err) {
@@ -705,7 +714,7 @@ router.get("/searchtasks", verify, async (req, res) => {
 });
 
 router.get("/getalltasksfortable", verify, async (req, res) => {
-  console.log(req.user.visbilityBasedOn);
+  // console.log(req.user.visbilityBasedOn);
   try {
     let pageSize, pageNumber, skipValue;
 
@@ -717,7 +726,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
 
         const adminTasks = await Task.find({})
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -739,7 +748,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
 
         const planningTasks = await Task.find({})
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -762,7 +771,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
           assignedSubcon: req.user.company,
         })
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -788,7 +797,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
           taskAssignedDiv: req.user.userDiv,
         })
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -814,7 +823,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
           assignedMobitelOfficer: req.user.id,
         })
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -840,7 +849,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
           assignedProjectManager: req.user.id,
         })
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -866,7 +875,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
           taskAssignedDiv: req.user.userDiv,
         })
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -892,7 +901,7 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
           assignedSubcon: req.user.company,
         })
           .select(
-            "taskRef siteID assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
+            "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus taskHistory headerProperties properties"
           )
           .populate([
             { path: "taskHistory.performedBy", select: "name" },
@@ -915,6 +924,149 @@ router.get("/getalltasksfortable", verify, async (req, res) => {
   }
 });
 
+// router.get("/downloadAllTasksData", async (req, res) => {
+//   try {
+//     const taskData = await Task.find({})
+//       .select(
+//         "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus companyName"
+//       )
+//       .populate([
+//         { path: "assignedMobitelOfficer", select: "name" },
+//         { path: "assignedSubcon", select: "companyName" },
+//       ]);
+
+//     const data = [];
+
+//     for (let i = 0; i < taskData.length; i++) {
+//       const task = taskData[i];
+
+//       // Check if assignedSubcon exists and has companyName property
+//       const companyName = task.assignedSubcon
+//         ? task.assignedSubcon.companyName
+//         : "";
+
+//       // Check if assignedMobitelOfficer exists and has name property
+//       const officerName = task.assignedMobitelOfficer
+//         ? task.assignedMobitelOfficer.name
+//         : "";
+
+//       const temp = {
+//         TaskID: `${task.taskRef || ""}`,
+//         SiteId: `${task.siteID || ""}`,
+//         SubConOrVender: `${companyName}`,
+//         AssigendOfficer: `${officerName}`,
+//         CurrentStatus: `${task.taskStatus || ""}`,
+//       };
+
+//       data.push(temp);
+
+//     }
+
+//     const ws = xlsx.utils.json_to_sheet(data);
+//     const wb = xlsx.utils.book_new();
+//     xlsx.utils.book_append_sheet(wb, ws, "allTask");
+//     xlsx.utils.book_append_sheet(wb, hd, "history");
+
+//     const xlsxBuffer = xlsx.write(wb, { bookType: "xlsx", type: "buffer" });
+
+//     // Set response headers
+//     res.setHeader("Content-Disposition", "attachment; filename=output.xlsx");
+//     res.setHeader(
+//       "Content-Type",
+//       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+//     );
+
+//     // Send the file
+//     res.send(xlsxBuffer);
+//   } catch (error) {
+//     console.error("Error downloading tasks data:", error);
+//     res.status(500).send("Internal Server Error");
+//   }
+// });
+
+router.get("/downloadAllTasksData", async (req, res) => {
+  try {
+    const taskData = await Task.find({})
+      .select(
+        "taskRef siteID siteName assignedSubcon assignedMobitelOfficer taskStatus companyName taskHistory"
+      )
+      .populate([
+        { path: "assignedMobitelOfficer", select: "name" },
+        { path: "assignedSubcon", select: "companyName" },
+        { path: "taskHistory.performedBy", select: "name" },
+      ]);
+
+    const data = [];
+    const historyData = [];
+
+    for (let i = 0; i < taskData.length; i++) {
+      const task = taskData[i];
+
+      // Check if assignedSubcon exists and has companyName property
+      const companyName = task.assignedSubcon
+        ? task.assignedSubcon.companyName
+        : "";
+
+      // Check if assignedMobitelOfficer exists and has name property
+      const officerName = task.assignedMobitelOfficer
+        ? task.assignedMobitelOfficer.name
+        : "";
+
+      const temp = {
+        TaskID: `${task.taskRef || ""}`,
+        SiteId: `${task.siteID || ""}`,
+        SubConOrVender: `${companyName}`,
+        AssigendOfficer: `${officerName}`,
+        CurrentStatus: `${task.taskStatus || ""}`,
+      };
+
+      data.push(temp);
+
+      // Include historical data
+      if (task.taskHistory && task.taskHistory.length > 0) {
+        task.taskHistory.forEach((historyEntry) => {
+          const historyTemp = {
+            TaskID: `${task.taskRef || ""}`,
+            Action: `${historyEntry.taskStatus || ""}`,
+            CommissionStatus: `${historyEntry.comStatus || ""}`,
+            SARStatus: `${historyEntry.sarStatus || ""}`,
+            PATStatus: `${historyEntry.patStatus || ""}`,
+            OnAirStatus: `${historyEntry.onairStatus || ""}`,
+            PerformedBy: `${historyEntry.performedBy.name || ""}`,
+            Date: moment(historyEntry.performedDate).format(
+              "YYYY-MM-DD HH:mm:ss"
+            ),
+            Comment: `${historyEntry.comment || ""}`,
+          };
+
+          historyData.push(historyTemp);
+        });
+      }
+    }
+
+    const ws = xlsx.utils.json_to_sheet(data);
+    const hd = xlsx.utils.json_to_sheet(historyData);
+    const wb = xlsx.utils.book_new();
+    xlsx.utils.book_append_sheet(wb, ws, "allTask");
+    xlsx.utils.book_append_sheet(wb, hd, "history");
+
+    const xlsxBuffer = xlsx.write(wb, { bookType: "xlsx", type: "buffer" });
+
+    // Set response headers
+    res.setHeader("Content-Disposition", "attachment; filename=output.xlsx");
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+
+    // Send the file
+    res.send(xlsxBuffer);
+  } catch (error) {
+    console.error("Error downloading tasks data:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 router.get("/getalltasksfortable/:id", verify, async (req, res) => {
   // console.log(req.params.id);
   let filteredTasks;
@@ -923,9 +1075,13 @@ router.get("/getalltasksfortable/:id", verify, async (req, res) => {
       try {
         let tasks = await Task.find({})
           .select(
-            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer boqs approvalPath"
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath boqprojectrequirement"
           )
-          .populate([{ path: "assignedMobitelOfficer", select: "name" }]);
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
 
         const filteredTasks = getFilteredTasks(req, tasks);
         res.send({ tasks: filteredTasks });
@@ -935,140 +1091,147 @@ router.get("/getalltasksfortable/:id", verify, async (req, res) => {
       break;
 
     case "Planning":
-      await Task.find({})
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          //console.log(tasks)
-          filteredTasks = getFilteredTasks(req, tasks);
+      try {
+        let tasks = await Task.find({})
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
 
-          res.send({ tasks: filteredTasks });
-        })
-        .catch((err) => {
-          console.log("error occured during read mobitel company tasks" + err);
-        });
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
     case "Subcon":
-      await Task.find({ assignedSubcon: req.user.company })
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          filteredTasks = getFilteredTasks(req, tasks);
+      try {
+        let tasks = await Task.find({ assignedSubcon: req.user.company })
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
 
-          res.send({ tasks: filteredTasks });
-        })
-        .catch((err) => {
-          console.log("error occured during read subcon company tasks" + err);
-        });
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
     case "Project_Div_Head":
-      await Task.find({ taskAssignedDiv: req.user.userDiv })
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          filteredTasks = getFilteredTasks(req, tasks);
+      try {
+        let tasks = await Task.find({ taskAssignedDiv: req.user.userDiv })
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
 
-          res.send({ tasks: filteredTasks });
-        })
-        .catch((err) => {
-          console.log("error occured during read specific div tasks" + err);
-        });
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
     case "Project_TO":
-      await Task.find({ assignedMobitelOfficer: req.user.id })
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          filteredTasks = getFilteredTasks(req, tasks);
-
-          res.send({ tasks: filteredTasks });
+      try {
+        let tasks = await Task.find({
+          assignedMobitelOfficer: req.user.id,
         })
-        .catch((err) => {
-          console.log("error occured during read specific user tasks" + err);
-        });
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
+
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
     case "Project_PM":
-      await Task.find({ assignedProjectManager: req.user.id })
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          filteredTasks = getFilteredTasks(req, tasks);
-
-          res.send({ tasks: filteredTasks });
+      try {
+        let tasks = await Task.find({
+          assignedProjectManager: req.user.id,
         })
-        .catch((err) => {
-          console.log("error occured during read specific user tasks" + err);
-        });
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
+
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
     case "Project_Coor":
-      await Task.find({ taskAssignedDiv: req.user.userDiv })
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          filteredTasks = getFilteredTasks(req, tasks);
-
-          res.send({ tasks: filteredTasks });
-          console.log("Project_Coor");
+      try {
+        let tasks = await Task.find({
+          taskAssignedDiv: req.user.userDiv,
         })
-        .catch((err) => {
-          console.log("error occured during read specific div tasks" + err);
-        });
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
+
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
     case "Vender":
-      await Task.find({ assignedSubcon: req.user.company })
-        .populate([
-          { path: "taskHistory.performedBy", select: "name" },
-          "assignedSubcon",
-          "assignedMobitelOfficer",
-          "boqs",
-          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
-        ])
-        .then((tasks) => {
-          filteredTasks = getFilteredTasks(req, tasks);
-
-          res.send({ tasks: filteredTasks });
+      try {
+        let tasks = await Task.find({
+          assignedSubcon: req.user.company,
         })
-        .catch((err) => {
-          console.log("error occured during read subcon company tasks" + err);
-        });
+          .select(
+            "taskRef siteID siteName project subProject taskHoDate taskAssignedDiv taskStatus taskHistory assignedMobitelOfficer assignedSubcon boqs approvalPath"
+          )
+          .populate([
+            { path: "assignedMobitelOfficer", select: "name" },
+            { path: "assignedSubcon", select: "companyName" },
+            { path: "approvalPath.assignedOfficer", select: "name" },
+          ]);
+
+        const filteredTasks = getFilteredTasks(req, tasks);
+        res.send({ tasks: filteredTasks });
+      } catch (err) {
+        console.log("error occured during read mobitel company tasks" + err);
+      }
       break;
   }
 });
 
-//Get tasks based on Company,Div,User of a task
+// Get tasks based on Company,Div,User of a task
+
 router.get("/gettasks", verify, async (req, res) => {
   // console.log(req.user.visbilityBasedOn);
-  // console.log(req.user.userDiv);
+
   let chartData;
   switch (req.user.visbilityBasedOn) {
     case "Admin":
@@ -1101,6 +1264,25 @@ router.get("/gettasks", verify, async (req, res) => {
           //console.log(tasks)
           chartData = getChartData(tasks);
           res.send({ tasks: tasks, chartData: chartData });
+        })
+        .catch((err) => {
+          console.log("error occured during read mobitel company tasks" + err);
+        });
+      break;
+    case "Optimization":
+      await Task.find({})
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "mobileNo" },
+        ])
+        .then((tasks) => {
+          //console.log(tasks)
+          // chartData = getChartData(tasks);
+          // res.send({ tasks: tasks, chartData: chartData });
+          res.send({ tasks: tasks });
         })
         .catch((err) => {
           console.log("error occured during read mobitel company tasks" + err);
@@ -1214,6 +1396,29 @@ router.get("/gettasks", verify, async (req, res) => {
   }
 });
 
+// router.get("/abc/a", async (req, res) => {
+//   console.log("run");
+//   const { page = 1, pageSize = 10 } = req.query;
+
+//   try {
+//     const tasks = await Task.find({ taskStatus: "BOQ Approved" })
+//       .skip((page - 1) * parseInt(pageSize, 10)) // Convert pageSize to integer
+//       .limit(parseInt(pageSize, 10)); // Convert pageSize to integer
+
+//     const totalTasks = await Task.countDocuments({
+//       taskStatus: "BOQ Approved",
+//     });
+
+//     res.json({
+//       tasks,
+//       totalPages: Math.ceil(totalTasks / parseInt(pageSize, 10)),
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// });
+
 //Get tasks based on Company,Div,User of a task
 router.get("/gettasks/:id", verify, async (req, res) => {
   // console.log(req.params.id);
@@ -1233,6 +1438,8 @@ router.get("/gettasks/:id", verify, async (req, res) => {
 
           filteredTasks = getFilteredTasks(req, tasks);
 
+          // console.log(filteredTasks);
+
           res.send({ tasks: filteredTasks });
         })
         .catch((err) => {
@@ -1240,6 +1447,25 @@ router.get("/gettasks/:id", verify, async (req, res) => {
         });
       break;
     case "Planning":
+      await Task.find({})
+        .populate([
+          { path: "taskHistory.performedBy", select: "name" },
+          "assignedSubcon",
+          "assignedMobitelOfficer",
+          "boqs",
+          { path: "approvalPath.assignedOfficer", select: "name mobileNo" },
+        ])
+        .then((tasks) => {
+          //console.log(tasks)
+          filteredTasks = getFilteredTasks(req, tasks);
+
+          res.send({ tasks: filteredTasks });
+        })
+        .catch((err) => {
+          console.log("error occured during read mobitel company tasks" + err);
+        });
+      break;
+    case "Optimization":
       await Task.find({})
         .populate([
           { path: "taskHistory.performedBy", select: "name" },
@@ -1527,6 +1753,7 @@ function getFilteredTasks(req, tasks) {
             obj["taskStatus"] !== "Task rejected" &&
             obj["taskStatus"] !== "Task accepted" &&
             obj["taskStatus"] !== "Task commenced" &&
+            obj["comStatus"] === "Site Commissioned" &&
             obj["taskStatus"] !== "Withdraw"
         ).length,
         setpendingPATCount: tasks.filter(
@@ -1537,6 +1764,7 @@ function getFilteredTasks(req, tasks) {
             obj["taskStatus"] !== "Task rejected" &&
             obj["taskStatus"] !== "Task accepted" &&
             obj["taskStatus"] !== "Task commenced" &&
+            obj["comStatus"] === "Site Commissioned" &&
             obj["taskStatus"] !== "Withdraw"
         ).length,
         setpendingOnairCount: tasks.filter(
@@ -1547,104 +1775,105 @@ function getFilteredTasks(req, tasks) {
             obj["taskStatus"] !== "Task rejected" &&
             obj["taskStatus"] !== "Task accepted" &&
             obj["taskStatus"] !== "Task commenced" &&
+            obj["patStatus"] === "PAT Pass" &&
             obj["taskStatus"] !== "Withdraw"
         ).length,
       };
 
-    case "venderSideNav":
-      return {
-        setSubconCount: tasks.filter(
-          (obj) =>
-            obj["taskStatus"] === "Task handed over" ||
-            obj["taskStatus"] === "Task rejected"
-        ).length,
-        setAcceptCount: tasks.filter(
-          (obj) => obj["taskStatus"] === "Subcon allocated"
-        ).length,
-        setworkcomCount: tasks.filter(
-          (obj) => obj["taskStatus"] === "Task accepted"
-        ).length,
-        setworkcompleteCount: tasks.filter(
-          (obj) => obj["taskStatus"] === "Task commenced"
-        ).length,
-        setboqCount: tasks.filter(
-          (obj) =>
-            (obj["taskStatus"] === "Task completed" ||
-              obj["taskStatus"] === "BOQ Rejected") &&
-            (obj["boqprojectrequirement"] === true ||
-              obj["boqprojectrequirement"] === undefined)
-        ).length,
-        setverifyBoqCount: tasks.filter(
-          (obj) =>
-            (obj.taskStatus === "BOQ submitted" &&
-              obj.approvalPath[0].assignedOfficer.id === req.user.id) ||
-            (obj.taskStatus === "BOQ Verified_0" &&
-              obj.approvalPath.length === 4 &&
-              obj.approvalPath[1].assignedOfficer.id === req.user.id) ||
-            (obj.taskStatus === "BOQ Verified_0" &&
-              obj.approvalPath.length === 3 &&
-              obj.approvalPath[1].assignedOfficer.id === req.user.id) ||
-            (obj.taskStatus === "BOQ Verified_1" &&
-              obj.approvalPath[2].assignedOfficer.id === req.user.id)
-        ).length,
-        setraisePrCount: tasks.filter(
-          (obj) => obj["taskStatus"] === "BOQ Approved"
-        ).length,
-        setapproveBoqCount: tasks.filter(
-          (obj) =>
-            obj["taskStatus"] === "BOQ Verified_2" &&
-            obj.approvalPath[obj.approvalPath.length - 1].assignedOfficer.id ===
-              req.user.id
-        ).length,
-        setraisePrCount: tasks.filter(
-          (obj) => obj["taskStatus"] === "BOQ Approved"
-        ).length,
-        setwithdrawTaskCount: tasks.filter(
-          (obj) => obj["taskStatus"] === "Withdraw"
-        ).length,
-        // setcompletedTaskCount:tasks.filter((obj) => ((obj["taskStatus"] === 'PR Raised'))).length,   // Count not required to see in nav panel
+    // case "venderSideNav":
+    //   return {
+    //     setSubconCount: tasks.filter(
+    //       (obj) =>
+    //         obj["taskStatus"] === "Task handed over" ||
+    //         obj["taskStatus"] === "Task rejected"
+    //     ).length,
+    //     setAcceptCount: tasks.filter(
+    //       (obj) => obj["taskStatus"] === "Subcon allocated"
+    //     ).length,
+    //     setworkcomCount: tasks.filter(
+    //       (obj) => obj["taskStatus"] === "Task accepted"
+    //     ).length,
+    //     setworkcompleteCount: tasks.filter(
+    //       (obj) => obj["taskStatus"] === "Task commenced"
+    //     ).length,
+    //     setboqCount: tasks.filter(
+    //       (obj) =>
+    //         (obj["taskStatus"] === "Task completed" ||
+    //           obj["taskStatus"] === "BOQ Rejected") &&
+    //         (obj["boqprojectrequirement"] === true ||
+    //           obj["boqprojectrequirement"] === undefined)
+    //     ).length,
+    //     setverifyBoqCount: tasks.filter(
+    //       (obj) =>
+    //         (obj.taskStatus === "BOQ submitted" &&
+    //           obj.approvalPath[0].assignedOfficer.id === req.user.id) ||
+    //         (obj.taskStatus === "BOQ Verified_0" &&
+    //           obj.approvalPath.length === 4 &&
+    //           obj.approvalPath[1].assignedOfficer.id === req.user.id) ||
+    //         (obj.taskStatus === "BOQ Verified_0" &&
+    //           obj.approvalPath.length === 3 &&
+    //           obj.approvalPath[1].assignedOfficer.id === req.user.id) ||
+    //         (obj.taskStatus === "BOQ Verified_1" &&
+    //           obj.approvalPath[2].assignedOfficer.id === req.user.id)
+    //     ).length,
+    //     setraisePrCount: tasks.filter(
+    //       (obj) => obj["taskStatus"] === "BOQ Approved"
+    //     ).length,
+    //     setapproveBoqCount: tasks.filter(
+    //       (obj) =>
+    //         obj["taskStatus"] === "BOQ Verified_2" &&
+    //         obj.approvalPath[obj.approvalPath.length - 1].assignedOfficer.id ===
+    //           req.user.id
+    //     ).length,
+    //     setraisePrCount: tasks.filter(
+    //       (obj) => obj["taskStatus"] === "BOQ Approved"
+    //     ).length,
+    //     setwithdrawTaskCount: tasks.filter(
+    //       (obj) => obj["taskStatus"] === "Withdraw"
+    //     ).length,
+    //     // setcompletedTaskCount:tasks.filter((obj) => ((obj["taskStatus"] === 'PR Raised'))).length,   // Count not required to see in nav panel
 
-        setpendingCommissioningTaskCount: tasks.filter(
-          (obj) =>
-            obj["comStatus"] !== "Site Commissioned" &&
-            obj["taskStatus"] !== "Task handed over" &&
-            obj["taskStatus"] !== "Subcon allocated" &&
-            obj["taskStatus"] !== "Task rejected" &&
-            obj["taskStatus"] !== "Task accepted" &&
-            obj["taskStatus"] !== "Task commenced" &&
-            obj["taskStatus"] !== "Withdraw"
-        ).length,
-        setpendingSARCount: tasks.filter(
-          (obj) =>
-            obj["sarStatus"] !== "SAR Pass" &&
-            obj["taskStatus"] !== "Task handed over" &&
-            obj["taskStatus"] !== "Subcon allocated" &&
-            obj["taskStatus"] !== "Task rejected" &&
-            obj["taskStatus"] !== "Task accepted" &&
-            obj["taskStatus"] !== "Task commenced" &&
-            obj["taskStatus"] !== "Withdraw"
-        ).length,
-        setpendingPATCount: tasks.filter(
-          (obj) =>
-            obj["patStatus"] !== "PAT Pass" &&
-            obj["taskStatus"] !== "Task handed over" &&
-            obj["taskStatus"] !== "Subcon allocated" &&
-            obj["taskStatus"] !== "Task rejected" &&
-            obj["taskStatus"] !== "Task accepted" &&
-            obj["taskStatus"] !== "Task commenced" &&
-            obj["taskStatus"] !== "Withdraw"
-        ).length,
-        setpendingOnairCount: tasks.filter(
-          (obj) =>
-            obj["onairStatus"] !== "Site On-Air" &&
-            obj["taskStatus"] !== "Task handed over" &&
-            obj["taskStatus"] !== "Subcon allocated" &&
-            obj["taskStatus"] !== "Task rejected" &&
-            obj["taskStatus"] !== "Task accepted" &&
-            obj["taskStatus"] !== "Task commenced" &&
-            obj["taskStatus"] !== "Withdraw"
-        ).length,
-      };
+    //     setpendingCommissioningTaskCount: tasks.filter(
+    //       (obj) =>
+    //         obj["comStatus"] !== "Site Commissioned" &&
+    //         obj["taskStatus"] !== "Task handed over" &&
+    //         obj["taskStatus"] !== "Subcon allocated" &&
+    //         obj["taskStatus"] !== "Task rejected" &&
+    //         obj["taskStatus"] !== "Task accepted" &&
+    //         obj["taskStatus"] !== "Task commenced" &&
+    //         obj["taskStatus"] !== "Withdraw"
+    //     ).length,
+    //     setpendingSARCount: tasks.filter(
+    //       (obj) =>
+    //         obj["sarStatus"] !== "SAR Pass" &&
+    //         obj["taskStatus"] !== "Task handed over" &&
+    //         obj["taskStatus"] !== "Subcon allocated" &&
+    //         obj["taskStatus"] !== "Task rejected" &&
+    //         obj["taskStatus"] !== "Task accepted" &&
+    //         obj["taskStatus"] !== "Task commenced" &&
+    //         obj["taskStatus"] !== "Withdraw"
+    //     ).length,
+    //     setpendingPATCount: tasks.filter(
+    //       (obj) =>
+    //         obj["patStatus"] !== "PAT Pass" &&
+    //         obj["taskStatus"] !== "Task handed over" &&
+    //         obj["taskStatus"] !== "Subcon allocated" &&
+    //         obj["taskStatus"] !== "Task rejected" &&
+    //         obj["taskStatus"] !== "Task accepted" &&
+    //         obj["taskStatus"] !== "Task commenced" &&
+    //         obj["taskStatus"] !== "Withdraw"
+    //     ).length,
+    //     setpendingOnairCount: tasks.filter(
+    //       (obj) =>
+    //         obj["onairStatus"] !== "Site On-Air" &&
+    //         obj["taskStatus"] !== "Task handed over" &&
+    //         obj["taskStatus"] !== "Subcon allocated" &&
+    //         obj["taskStatus"] !== "Task rejected" &&
+    //         obj["taskStatus"] !== "Task accepted" &&
+    //         obj["taskStatus"] !== "Task commenced" &&
+    //         obj["taskStatus"] !== "Withdraw"
+    //     ).length,
+    //   };
 
     // case 'toSubmitCommission':                                                           // create for the commission pending tasks
     //     return tasks.filter((obj) => (obj["taskStatus"] !== 'Task handed over'))         // Test codes
@@ -1657,6 +1886,7 @@ function getFilteredTasks(req, tasks) {
     case "toSubmitCommission":
       return tasks.filter(
         (obj) =>
+          obj["comStatus"] !== "Site Commissioned" &&
           obj["taskStatus"] !== "Task handed over" &&
           obj["taskStatus"] !== "Subcon allocated" &&
           obj["taskStatus"] !== "Task rejected" &&
@@ -1664,9 +1894,46 @@ function getFilteredTasks(req, tasks) {
           obj["taskStatus"] !== "Task commenced" &&
           obj["taskStatus"] !== "Withdraw"
       );
+
+    case "toSubmitSar":
+      return tasks.filter(
+        (obj) =>
+          obj["sarStatus"] !== "SAR Pass" &&
+          obj["taskStatus"] !== "Task handed over" &&
+          obj["taskStatus"] !== "Subcon allocated" &&
+          obj["taskStatus"] !== "Task rejected" &&
+          obj["taskStatus"] !== "Task accepted" &&
+          obj["taskStatus"] !== "Task commenced" &&
+          obj["comStatus"] === "Site Commissioned" &&
+          obj["taskStatus"] !== "Withdraw"
+      );
+
+    case "toSubmitPat":
+      return tasks.filter(
+        (obj) =>
+          obj["patStatus"] !== "PAT Pass" &&
+          obj["taskStatus"] !== "Task handed over" &&
+          obj["taskStatus"] !== "Subcon allocated" &&
+          obj["taskStatus"] !== "Task rejected" &&
+          obj["taskStatus"] !== "Task accepted" &&
+          obj["taskStatus"] !== "Task commenced" &&
+          obj["comStatus"] === "Site Commissioned" &&
+          obj["taskStatus"] !== "Withdraw"
+      );
+    case "toSubmitOnAir":
+      return tasks.filter(
+        (obj) =>
+          obj["onairStatus"] !== "Site On-Air" &&
+          obj["taskStatus"] !== "Task handed over" &&
+          obj["taskStatus"] !== "Subcon allocated" &&
+          obj["taskStatus"] !== "Task rejected" &&
+          obj["taskStatus"] !== "Task accepted" &&
+          obj["taskStatus"] !== "Task commenced" &&
+          obj["patStatus"] === "PAT Pass" &&
+          obj["taskStatus"] !== "Withdraw"
+      );
   }
 }
-
 //Check admin rights status
 function checkAdminRights(req, res, next) {
   if (req.isAuthenticated()) {

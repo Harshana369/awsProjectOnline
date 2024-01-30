@@ -88,6 +88,9 @@ const taskSchema = new mongoose.Schema(
     sarStatus: String,
     patStatus: String,
     onairStatus: String,
+
+    optimizationAcceptance: String,
+
   },
   { timestamps: true }
 );
