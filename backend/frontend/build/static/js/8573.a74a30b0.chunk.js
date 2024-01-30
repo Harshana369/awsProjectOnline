@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[8573],{33089:(e,n,r)=>{r.r(n),r.d(n,{default:()=>d});r(72791);var s=r(80184);const d=function(){return(0,s.jsx)("div",{children:(0,s.jsx)("h1",{children:"RaiseAWRBody"})})}}}]);
-//# sourceMappingURL=8573.a74a30b0.chunk.js.map
